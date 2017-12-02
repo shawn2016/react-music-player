@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import Header from './components/header'
-import Progress from './components/progress'
+import Player from './page/player'
+import MusicList from './page/musicList'
+import { MUSIC_LIST } from './config/config';
 let duration = null
 class Root extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            progress: 0
+            musicList: MUSIC_LIST,
+            currentMusitItem: MUSIC_LIST[0]
         }
     }
     componentDidMount() {
@@ -20,30 +23,19 @@ class Root extends Component {
             wmode: "window",
             useStateClassSkin: true
         });
-        $("#player").bind($.jPlayer.event.timeupdate, (e) => {
-            duration = e.jPlayer.status.duration;
-            this.setState({
-                progress: e.jPlayer.status.currentPercentAbsolute
-            });
-        });
-    }
-    componentWillUnmout() {
-        $("#player").unbind($.jPlayer.event.timeupdate);
-    }
-    onProgressChange(progress) {
-        console.log(progress)
-        $('#player').jPlayer('play', duration * progress)
     }
     render() {
-        return [
-            <Header key="Header" />,
-            <Progress
-                key="Progress"
-                progress={this.state.progress}
-                barColor="red"
-                onProgressChange={this.onProgressChange.bind(this)}
-            />
-        ]
+        return (
+            <div>
+                <Header />
+                <MusicList
+                    currentMusitItem={this.state.currentMusitItem}
+                    musicList={this.state.musicList}
+                >
+
+                </MusicList>
+            </div>
+        )
     }
 }
 export default Root
