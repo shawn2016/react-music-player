@@ -1,17 +1,17 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
-import Hello from './components/hello'
+import Root from './root'
 render(
     <AppContainer>
-        <Hello></Hello>
+        <Root />
     </AppContainer>,
     document.getElementById('root')
 )
 // Webpack Hot Module Replacement API
 if (module.hot) {
-    module.hot.accept('./components/hello', () => {
-        const NewRoot = require('./components/hello').default;
+    module.hot.accept('./root', () => {
+        const NewRoot = require('./root').default;
         render(
             <AppContainer>
                 <NewRoot />
