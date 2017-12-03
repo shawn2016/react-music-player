@@ -1,7 +1,30 @@
 # react-music-player
 
-安装文件
+技术栈
+`react16` `react-router4` `webpack4` `jquery.jplayer` `jquery` `es6`
 
-`npm install react --save react-dom react-router react-hot-loader`
+#### Description
 
-`npm i autoprefixer  babel-core babel-loader babel-plugin-react-transform babel-preset-es2015 babel-preset-react  css-loader extract-text-webpack-plugin html-webpack-plugin json-loader less less-loader style-loader webpack webpack-dev-server --save-dev`
+使用React构建一款音乐播放器
+
+#### Download
+
+```
+git clone https://github.com/shawn2016/react-music-player.git
+```
+
+#### Install
+
+```
+npm install
+```
+
+#### Run
+
+```
+npm start
+```
+
+#### License
+
+MIT © [shawn2016](https://github.com/shawn2016)
