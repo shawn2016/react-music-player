@@ -1,6 +1,7 @@
 # react-music-player
 
-技术栈
+#### 技术栈
+
 `react16` `react-router4` `webpack4` `jquery.jplayer` `jquery` `es6`
 
 #### Description
